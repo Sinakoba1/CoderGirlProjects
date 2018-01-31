@@ -2,55 +2,67 @@ package com.company;
 import static java.lang.System.out;
 import java.util.Scanner;
 
-public class Main {
+class SandwichShop {
 
     public static void main(String[] args) {
-
         Scanner keyboard = new Scanner(System.in);
-        String item1;
-        String item2;
-        String item3;
+        int goalForVeggies = 50;
+        int goalForBurgers = 250;
+        int goalForSubs = 180;
+        int goalForSoup = 70;
 
-        out.println("Please list three items on your grocery shopping list.");
-        out.print("Item 1? ");
-        item1 = keyboard.nextLine();
-        out.print("Item 2? ");
-        item2 = keyboard.nextLine();
-        out.print("Item 3? ");
-        item3  = keyboard.nextLine();
+        out.println("Checking sales goals. ");
+        out.println("The sales goal for veggie sandwiches is 50 ");
+        out.print("How many veggie sandwiches were sold today? ");
+        int veggiesSoldToday = keyboard.nextInt();
+        keyboard.skip("\n");
+        if
+        (veggiesSoldToday < goalForVeggies) {
+            out.println("Fell Short ");
+        }
+        else  {
+            out.println("Made goal for veggies. ");
+        }
+        out.println("The sales goal for burgers is 250 ");
+        out.print("How many burgers were sold today? ");
 
-        int item1Count;
-        int item2Count;
-        int item3Count;
+        int burgersSoldToday = keyboard.nextInt();
 
-        out.println("Now, please enter the quantity of each item.");
-        out.print("How many " + item1 + "? " );
-        item1Count = keyboard.nextInt();
-        out.print("How many " + item2 + "? " );
-        item2Count = keyboard.nextInt();
-        out.print("How many " + item3 + "? " );
-        item3Count = keyboard.nextInt();
+        keyboard.skip("\n");
+        if (burgersSoldToday < goalForBurgers) {
+            out.println("Fell Short ");
+        }
+        else  {
+            out.println("Made goal for burgers. ");
+        }
+        out.println("The sales goal for subs is 180 ");
+        out.print("How many subs were sold today? ");
+        int subsSoldToday = keyboard.nextInt();
+        keyboard.skip("\n");
+        if (subsSoldToday < goalForSubs) {
+            out.print("Fell Short ");
+        }
+        else  {
+            out.println("Made goal for subs. ");
+        }
+        out.println("The sales goal for soup is 70 ");
+        out.print("How many soup were sold today? ");
+        int soupSoldToday = keyboard.nextInt();
+        keyboard.skip("\n");
 
-        float item1Price;
-        float item2Price;
-        float item3Price;
-
-        out.println("Now, please enter the price of each item. ");
-        out.print("How much does one " + item1 + " cost? " );
-        item1Price = keyboard.nextFloat();
-        out.print("How much does one " + item2 + " cost? " );
-        item2Price = keyboard.nextFloat();
-        out.print("How much does one " + item3 + " cost? " );
-        item3Price = keyboard.nextFloat();
-
-        float item1Cost = item1Count * item1Price;
-        float item2Cost = item2Count * item2Price;
-        float item3Cost = item3Count * item3Price;
-        out.println("Calculating your grocery bill. ");
-        out.print("Your total cost is " + (item1Cost + item2Cost + item3Cost) );
-
-
+        if (soupSoldToday < goalForSoup) {
+            out.println("Fell Short ");
+        }
+        else  {
+            out.println("Made goal for Soup. ");
+        }
+        if ((veggiesSoldToday >= goalForVeggies) && (burgersSoldToday >= goalForBurgers) && (subsSoldToday >= goalForSubs)
+                && (soupSoldToday >= goalForSoup))
+        {
+            out.println("Made goal for everything!");
+        }
 
 
     }
+
 }
