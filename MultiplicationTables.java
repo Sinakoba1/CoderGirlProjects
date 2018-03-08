@@ -12,8 +12,6 @@ public class MultiplicationTables
         out.println("Welcome to Multiplication Tables");
         out.print("How large would you like to see them? ");
         size = keyboard.nextInt();
-
-
         for (a = 0; a <= size; a++)
         {
             if (a < 10)
