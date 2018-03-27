@@ -1,7 +1,5 @@
 package com.company;
 import static java.lang.System.out;
-import java.util.Arrays;
-import java.util.Scanner;
 public class Temperatures
 {
     public static void main(String[] args)
