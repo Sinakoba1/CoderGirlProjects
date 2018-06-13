@@ -15,19 +15,26 @@ public class Main {
         for (int a = 0; a < 7; a++){
             System.out.println(singleStitch[a].singleStitch());
         }
-        Pattern comboStitch[] = new Pattern[8];
+        Pattern comboStitch[] = new Pattern[5];
         comboStitch[0]=new CrossStitchWigglePattern();
         comboStitch[1]=new ZigZagLinesPattern();
         comboStitch[2]=new BaublePattern();
         comboStitch[3]=new BlockyBaublePattern();
         comboStitch[4]=new BrokenWigglePattern();
 
+        boolean keepGoing = true;
+        int count = 0;
+        while (keepGoing){
+            count++;
+            keepGoing = (count < 3);
+
         for (int row = 0; row < comboStitch.length; row++){
             for (int column = 0; column < comboStitch.length; column++)
-                System.out.println(comboStitch[row].comboStitch());
-            System.out.println();
+                System.out.print(comboStitch[row].comboStitch());
+             System.out.println();
 
         }
+    }
 
     }
 }

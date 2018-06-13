@@ -2,6 +2,12 @@ package TapestryController;
 
 public class CrossStitchWigglePattern extends Pattern{
     public String comboStitch() {
-        return "xXxXxXxXxX ";
+        {
+            boolean needleJam = (Math.random() < 0.05d);
+            if(needleJam){
+                return "xXxXx ";
+            }
+            return "xXxXxXxXxX";
+        }
     }
 }
