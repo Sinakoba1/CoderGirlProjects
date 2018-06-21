@@ -2,7 +2,6 @@ package TryAgain;
 
 public class User {
 
-
     private String userName;
 
     public User(String userName) {
@@ -12,6 +11,5 @@ public class User {
     public String getUserName() {
         return userName;
     }
-
 
 }

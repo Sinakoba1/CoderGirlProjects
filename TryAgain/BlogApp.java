@@ -3,19 +3,18 @@ package TryAgain;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import static java.lang.System.out;
+
 public class BlogApp {
     static Scanner keyboard = new Scanner(System.in);
 
-
-
     public static void main(String[] args) {
         String numberMenu;
-        String chosenUser;
+
         String chosenPost;
+        String currentUser = "Pug";
 
         ArrayList <User> users = new ArrayList <User>();
-
-
         User newUser = new User("Wonder_Woman");
         users.add(newUser);
         newUser = new User("Hot_Mama");
@@ -24,7 +23,8 @@ public class BlogApp {
         users.add(newUser);
         newUser = new User("She_Doctor");
         users.add(newUser);
-
+        newUser = new User("Pug");
+        users.add(newUser);
 
         ArrayList <Post> posts = new ArrayList <Post>();
         Post newPost = new Post("Hanging with my boys... Killing TIME!");
@@ -45,36 +45,39 @@ public class BlogApp {
             System.out.println("3) Create a post as the current user");
             System.out.println("4) Print all posts");
             System.out.println("5) Print all users");
-            System.out.print("\nWhat would you like to do?\n> ");
+            System.out.print("\nYou are currently user " + currentUser +". What would you like to do?\n> ");
             numberMenu = keyboard.nextLine();
 
-
-
-
             if (numberMenu.equals("1")) {
-                System.out.println("\nYou are currently User Pug.");
+
                 System.out.println("Enter new User information:");
                 newUser = new User(keyboard.nextLine());
                 users.add(newUser);
                 System.out.println("\nHello " + newUser.getUserName() + "!");
+                currentUser = newUser.getUserName();
 
             }
 
             if (numberMenu.equals("2")) {
-
-                System.out.println("Choose from the list of User Names:\n");
-                for (int counter = 0; counter < users.size(); counter++)
+                int chosenUser;
+                System.out.println("Choose the number from the list of User Names:");
+                for (int counter = 1; counter <= users.size(); counter++)
                 {
-                    System.out.println(users.get(counter).getUserName());
+                    System.out.println(counter + ") " + users.get(counter-1).getUserName());
+
                 }
                 System.out.print("> ");
-                chosenUser = keyboard.nextLine();
-                System.out.print("\nHi " + chosenUser + "!\n");
+                chosenUser = keyboard.nextInt();
+                currentUser = users.get(chosenUser-1).getUserName();
+                System.out.println("\nHi " + currentUser + "!");
+                keyboard.skip("\n");
 
             }
 
             if (numberMenu.equals("3")) {
-                System.out.print("Hello!\nEnter new Post:\n>");
+                Post lastPost = posts.get(posts.size() - 1);
+                System.out.println("Here is the last post:\n "+ lastPost.getPost()+ "\n");
+                System.out.print("Please enter new Post:\n>");
                 chosenPost = keyboard.nextLine();
                 posts.add(new Post(chosenPost));
 

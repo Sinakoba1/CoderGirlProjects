@@ -14,6 +14,4 @@ public class Post {
         return this.userPost;
     }
 
-
-
 }
