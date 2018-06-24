@@ -14,6 +14,9 @@ public class User {
     public String getUserName() {
         return userName;
     }
+    public String getUserDescription() {
+        return userName + " - " + realName + " - " + email + "\n" + avatarPicURL;
+    }
     public String getRealName() {
         return realName;
     }

@@ -40,7 +40,7 @@ public class BlogApp {
             System.out.println("3) Create a post as the current user");
             System.out.println("4) Print all posts");
             System.out.println("5) Print all users");
-            System.out.print("\nYou are currently user " + currentUser +". What would you like to do?\n> ");
+            System.out.print("\nYou are currently user " + currentUser +".\nWhat would you like to do?\n> ");
             numberMenu = keyboard.nextLine();
 
             if (numberMenu.equals("1")) {
@@ -100,6 +100,8 @@ public class BlogApp {
             if (numberMenu.equals("4")) {
 
                 System.out.println("Here are all the Posts:\n");
+                if (posts.isEmpty()){
+                    System.out.println("This User has no previous post");}
                 for (int counter = 0; counter < posts.size(); counter++)
 
                 {
@@ -111,7 +113,7 @@ public class BlogApp {
 
                 for (int counter = 0; counter < users.size(); counter++) {
 
-                    System.out.println(users.get(counter).getUserName());
+                    System.out.println(users.get(counter).getUserDescription());
                 }
             }
         }

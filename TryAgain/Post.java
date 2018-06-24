@@ -9,7 +9,7 @@ public class Post {
     }
     public String getPost()
     {
-        return this.userPost;
+        return this.userName +  " - " + this.userPost;
     }
     public String getUserName() {
         return userName;
